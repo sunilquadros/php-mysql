@@ -2,7 +2,7 @@
 $servername = "172.30.251.114";
 $username = "ose";
 $password = "openshift";
-$dbname = "quotes"
+$dbname = "quotes";
 
 
 // Create connection
