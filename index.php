@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
 }
 
 $sql = "INSERT INTO quote (id, msg)
-VALUES ('5', 'A stitch in time saves nine');
+ VALUES ('8', 'A stitch in time saves nine')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -36,6 +36,21 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+echo "";
+echo "Table listing after new record has been inserted";
+
+$sql = "SELECT id, msg from quote";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+   // output data of each row
+   while($row = $result->fetch_assoc()) {
+   // echo "id: " . $row["id"]. " - Message: " . $row["msg"]. "<br>";
+      echo "id: " . $row["id"]. " - Message: " . $row["msg"]. " ". "<br>";
+   }
+} else {
+   echo "0 results";
+}
 
 $conn->close();
 ?>
