@@ -26,5 +26,16 @@ if ($result->num_rows > 0) {
 } else {
    echo "0 results";
 }
+
+$sql = "INSERT INTO quote (id, msg)
+VALUES ('5', 'A stitch in time saves nine');
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
 $conn->close();
 ?>
